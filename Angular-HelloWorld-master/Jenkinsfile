@@ -1,12 +1,7 @@
 node {
       
-    stage('Init') {
-    steps {sh '''#!/bin/bash
-     echo "MAVEN_HOME = ${M2}";
-	 npm install -g @angular/cli;
-	 npm install;
-	 '''
-	  }
-     }
-
+    stage('NPM Install') {
+	    sh 'npm install -g @angular/cli;'
+	    sh 'npm install'
+    }
 }
