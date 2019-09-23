@@ -1,13 +1,8 @@
-pipeline {
-   agent any
-	tools
-        {
-            
-        }
- stages {
+node {
+
     stage('NPM Install') {
 	    sh 'npm install -g @angular/cli'
 	    sh 'npm install'
     }
- }
+ 
 }
