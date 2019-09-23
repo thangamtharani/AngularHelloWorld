@@ -1,13 +1,11 @@
 node {
-    def nodeHome = tool name: 'node-11.0.0', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
-   
-    stage('check tools') {
-        sh "node -v"
-        sh "npm -v"
-    }
-
-    stage('npm install') {
-        sh "npm install"
-    }
+      
+    stage('Init') {
+    
+     echo "MAVEN_HOME = ${M2}";
+	 npm install -g @angular/cli;
+	 npm install;
+	 '''
+     }
 
 }
