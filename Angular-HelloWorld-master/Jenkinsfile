@@ -1,7 +1,7 @@
 node {
       
     stage('Init') {
-    
+    steps {sh '''#!/bin/bash
      echo "MAVEN_HOME = ${M2}";
 	 npm install -g @angular/cli;
 	 npm install;
