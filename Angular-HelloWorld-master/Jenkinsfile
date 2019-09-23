@@ -1,5 +1,9 @@
 pipeline {
    agent any
+	tools
+        {
+            maven 'M2'
+        }
     stage('NPM Install') {
 	    sh 'npm install -g @angular/cli'
 	    sh 'npm install'
