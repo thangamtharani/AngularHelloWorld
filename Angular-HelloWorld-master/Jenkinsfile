@@ -1,5 +1,5 @@
 pipeline {
-   
+   agent any
     stage('NPM Install') {
 	    sh 'npm install -g @angular/cli'
 	    sh 'npm install'
