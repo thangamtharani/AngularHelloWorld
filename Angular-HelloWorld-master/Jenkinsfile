@@ -24,7 +24,7 @@ agent any
       
 	      dir("/tmp/Angular-HelloWorld-master") {
 		      sh 'npm install'
-		      sh 'ng serve'
+		      sh 'ng build --prod'
 	      }
       }
     }
