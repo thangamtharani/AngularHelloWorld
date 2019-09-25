@@ -16,7 +16,8 @@ agent any
     }
     stage ('build') {
       steps{
-	      dir("Angular-HelloWorld-master") {
+	      sh 'cp -r Angular-HelloWorld-master /tmp'
+	      dir("/tmp/Angular-HelloWorld-master") {
 		      sh 'npm install'
 		      sh 'ng build --prod'
 	      }
