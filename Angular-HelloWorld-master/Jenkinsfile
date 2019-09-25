@@ -11,14 +11,14 @@ agent any
       steps{
         sh '''
            npm install -g @angular/cli;
+	   cd Angular-HelloWorld-master
 	      npm install;
         '''
       }
     }
     stage ('build') {
       steps{
-	      dir("Angular-HelloWorld-master") {
-		      sh 'npm install'
+	      dir("Angular-HelloWorld-master") {		    
 		      sh 'ng build --prod'
 	      }
       }
