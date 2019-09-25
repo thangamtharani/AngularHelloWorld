@@ -13,8 +13,8 @@ pipeline{
     stage ('install modules'){
       steps{
         sh '''
-          npm install --verbose -d 
-          npm install --save classlist.js
+           npm install -g @angular/cli;
+	      npm install;
         '''
       }
     }
