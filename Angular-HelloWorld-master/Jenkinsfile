@@ -23,11 +23,10 @@ agent any
       steps{
       
 	      dir("/tmp/Angular-HelloWorld-master") {
-		      sh 'npm install'
+		      sh 'npm install --force'
 		      sh 'ng build --prod'
 	      }
       }
     }
   }
   }
-trhgf
