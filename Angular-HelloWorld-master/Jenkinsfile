@@ -10,20 +10,15 @@ agent any
     stage ('install modules'){
       steps{
         sh '''
+	   apk add nodejs;
            npm install -g @angular/cli@7.3.1;
         '''
       }
     }
-    stage ('copy') {
-      steps{	      
-	      sh 'cp -r Angular-HelloWorld-master /tmp'
-      }
-    }
     stage ('build') {
       steps{
-      
-	      dir("/tmp/Angular-HelloWorld-master") {
-		      sh 'npm install --force'
+	      dir("Angular-HelloWorld-master") {
+		      sh 'npm install'
 		      sh 'ng build --prod'
 	      }
       }
