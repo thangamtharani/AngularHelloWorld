@@ -1,5 +1,11 @@
 pipeline{
-agent any
+agent { 
+	docker {
+		image 'node:latest'
+		args '-p 3000:3000'
+		}
+	}
+environment { CI = 'true'}
   //tools {nodejs "nodejs"}
   stages{
     stage ('checkout'){
@@ -10,8 +16,6 @@ agent any
     stage ('install modules'){
       steps{
         sh '''
-	  /usr/bin/yum add nodejs
-	  echo $PATH
 	  npm install -g @angular/cli@7.3.1
 	  
         '''
