@@ -11,12 +11,14 @@ agent any
       steps{
         sh '''
 	  npm install -g @angular/cli@7.3.1
+	  echo "$PATH"
         '''
       }
     }
     stage ('build') {
       steps{
 	      dir("Angular-HelloWorld-master") {
+		      echo "$PATH"
 		      sh 'ng build --prod'
 	      }
 	      
