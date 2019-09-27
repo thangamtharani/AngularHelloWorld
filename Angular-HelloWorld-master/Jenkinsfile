@@ -10,8 +10,7 @@ agent any
     stage ('install modules'){
       steps{
         sh '''
-	  npm install --verbose -d 
-          npm install --save classlist.js
+	  npm install -g @angular/cli@7.3.1
         '''
       }
     }
