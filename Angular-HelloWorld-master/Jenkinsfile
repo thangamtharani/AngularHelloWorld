@@ -1,6 +1,6 @@
 pipeline{
 agent any
-  tools {nodejs "nodejs"}
+  //tools {nodejs "nodejs"}
   stages{
     stage ('checkout'){
       steps{
@@ -10,6 +10,8 @@ agent any
     stage ('install modules'){
       steps{
         sh '''
+	  apk add nodejs
+	  echo $PATH
 	  npm install -g @angular/cli@7.3.1
 	  
         '''
