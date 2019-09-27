@@ -10,15 +10,22 @@ agent any
     stage ('install modules'){
       steps{
         sh '''
-	  npm install -g @angular/cli@7.3.1;
+	  npm install --verbose -d 
+          npm install --save classlist.js
         '''
       }
     }
     stage ('build') {
       steps{
-	      dir("Angular-HelloWorld-master") {
-		      sh 'ng build --prod'
-	      }
+	      sh '$(npm bin)/ng build --prod --build-optimizer'
+      }
+    }
+    stage ('build image') {
+      steps{
+        sh '''
+          rm -rf node_modules
+          oc start-build angularhelloworld --from-dir=. --follow
+        '''
       }
     }
   }
