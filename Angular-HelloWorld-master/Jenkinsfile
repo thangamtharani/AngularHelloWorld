@@ -17,7 +17,10 @@ agent any
     }
     stage ('build') {
       steps{
-	      sh 'ng build --prod --build-optimizer'
+	      dir("Angular-HelloWorld-master") {
+		      sh 'ng build --prod --build-optimizer'
+	      }
+	      
       }
     }
     stage ('build image') {
